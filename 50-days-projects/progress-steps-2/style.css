@@ -1,0 +1,66 @@
+ :root{
+    --line-border-fill:rgb(48, 179, 18);
+    --line-border-empty: #d2cfcf;
+ }
+ 
+ .container{
+            display: flex;
+           /*  gap: 1rem; */
+            margin-bottom: 1rem;
+            position: relative;
+            width: 171px;
+        }
+
+.container:nth-child(3) {
+  margin-left: 0;
+}       
+
+        .container::before{
+            content: '';
+            background-color: var(--line-border-empty);
+            height: 4px;
+            width: 100%;
+            position: absolute;
+             top:50%;
+             z-index: -1;
+             left: 0;
+             transform: translate(0%);
+        }
+
+        .progressLine{
+            background-color: var(--line-border-fill);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 0%;
+            z-index: -1;
+            height: 4px;
+            transition: 0.4s ease;
+            transform:translate(0%);
+        }
+
+
+        .round{
+    width: 25px;
+    height: 25px;
+    border: 3px solid grey;
+    border-radius: 50px;
+    align-content: center;
+    text-align: center;
+    background-color: #fff;
+    margin-right: 1rem;
+}
+
+.container .round:first-of-type {
+  margin-left: -1rem;   /* kills the gap before the first circle */
+}
+
+.round:last-child{
+    margin-right: 0;
+}
+
+
+
+.highlight{
+    border: 3px solid rgb(48, 179, 18);
+}
